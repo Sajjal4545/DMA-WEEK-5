@@ -1,1 +1,1 @@
-<img src="gif/Shopping-List.gif" width="400" />
+<img src="gif/TwoActivitiesLifecycle.gif" width="400" />

@@ -1,16 +1,3 @@
 <resources>
-    <string name="app_name">Shopping List</string>
-    <string name="activity2_name">Items</string>
-    <string name="cheese">Cheese</string>
-    <string name="rice">Rice</string>
-    <string name="apples">Apples</string>
-    <string name="banana">Banana</string>
-    <string name="oranges">Oranges</string>
-    <string name="shampoo">Shampoo</string>
-    <string name="dog_food">Dog Food</string>
-    <string name="washing_powder">Washing Powder</string>
-    <string name="Potato">Potato</string>
-    <string name="shop">Shop</string>
-    <string name="add_item">Add Item</string>
-
+    <string name="app_name">TwoActivitiesLifecyle</string>
 </resources>
