@@ -1,8 +1,10 @@
 package com.example.twoactivitieslifecycle;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,68 +14,43 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    public static final String EXTRA_MESSAGE= "com.example.twoactivies.extra.MESSAGE";
-    private EditText mMessageEditText;
     public static final int TEXT_REQUEST = 1;
-    private TextView mReplyHeadTextView;
-    private TextView mReplyTextView;
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        Log.d(LOG_TAG, "onStart");
-    }
-
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        // If the heading is visible, message needs to be saved.
-        // Otherwise we're still using default layout.
-        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
-            outState.putBoolean("reply_visible", true);
-            outState.putString("reply_text", mReplyTextView.getText().toString());
-        }
-    }
+    private TextView item_one;
+    private TextView item_2;
+    private TextView item_3;
+    private TextView item_4;
+    private TextView item_5;
+    private TextView item_6;
+    private TextView item_7;
+    private TextView item_8;
+    private TextView item_9;
+    private TextView item_10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Log the start of the onCreate() method.
-        Log.d(LOG_TAG, "-------");
-        Log.d(LOG_TAG, "onCreate");
+        item_one = findViewById(R.id.txtItemOne);
+        item_2 = findViewById(R.id.txtItemTwo);
+        item_3 = findViewById(R.id.txtItemThree);
+        item_4 = findViewById(R.id.txtItemFour);
+        item_5 = findViewById(R.id.txtItemFive);
+        item_6 = findViewById(R.id.txtItemSix);
+        item_7 = findViewById(R.id.txtItemSeven);
+        item_8 = findViewById(R.id.txtItemEight);
+        item_9 = findViewById(R.id.txtItemNine);
+        item_10 = findViewById(R.id.txtItemTen);
 
-        // Initialize all the view variables.
-        mMessageEditText = findViewById(R.id.editText_main);
-        mReplyHeadTextView = findViewById(R.id.text_header_reply);
-        mReplyTextView = findViewById(R.id.text_message_reply);
-
-        // Restore the saved state.
-        // See onSaveInstanceState() for what gets saved.
-        if (savedInstanceState != null) {
-            boolean isVisible =
-                    savedInstanceState.getBoolean("reply_visible");
-            // Show both the header and the message views. If isVisible is
-            // false or missing from the bundle, use the default layout.
-            if (isVisible) {
-                mReplyHeadTextView.setVisibility(View.VISIBLE);
-                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
-                mReplyTextView.setVisibility(View.VISIBLE);
-            }
-        }
     }
 
-    public void launchSecondActivity(View view) {
+    public void openItems(View view) {
         Log.d(LOG_TAG, "Button Clicked!");
 
         Intent intent = new Intent(this, SecondActivity.class);
-        String message = mMessageEditText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(intent, TEXT_REQUEST);
     }
-
     @Override
     public void onActivityResult(int requestCode,
                                  int resultCode, Intent data) {
@@ -81,41 +58,28 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == TEXT_REQUEST) {
             if (resultCode == RESULT_OK) {
                 String reply =  data.getStringExtra(SecondActivity.EXTRA_REPLY);
-                mReplyHeadTextView.setVisibility(View.VISIBLE);
-                mReplyTextView.setText(reply);
-                mReplyTextView.setVisibility(View.VISIBLE);
+                if(item_one.getText()=="")
+                    item_one.setText(reply);
+                else if(item_2.getText()=="")
+                    item_2.setText(reply);
+                else if(item_3.getText()=="")
+                    item_3.setText(reply);
+                else if(item_4.getText()=="")
+                    item_4.setText(reply);
+                else if(item_5.getText()=="")
+                    item_5.setText(reply);
+                else if(item_6.getText()=="")
+                    item_6.setText(reply);
+                else if(item_7.getText()=="")
+                    item_7.setText(reply);
+                else if(item_8.getText()=="")
+                    item_8.setText(reply);
+                else if(item_9.getText()=="")
+                    item_9.setText(reply);
+                else if(item_10.getText()=="")
+                    item_10.setText(reply);
             }
         }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "onPause");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "onRestart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "onResume");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
     }
 
 

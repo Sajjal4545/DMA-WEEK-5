@@ -1,77 +1,117 @@
 package com.example.twoactivitieslifecycle;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class SecondActivity extends AppCompatActivity {
-    public static final String EXTRA_REPLY =
-            "com.example.twoactivities.extra.REPLY";
-    private EditText mReply;
+import org.w3c.dom.Text;
 
+public class SecondActivity extends AppCompatActivity {
     private static final String LOG_TAG = SecondActivity.class.getSimpleName();
+
+    public static final String EXTRA_REPLY =
+            "com.example.shoppinglist.extra.REPLY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        // Log the start of the onCreate() method.
-        Log.d(LOG_TAG, "-------");
-        Log.d(LOG_TAG, "onCreate");
 
-        // Initialize all the view variables.
-        mReply = findViewById(R.id.editText_second);
-
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView textView = findViewById(R.id.text_message);
-        textView.setText(message);
     }
 
-    public void returnReply(View view) {
-        String reply = mReply.getText().toString();
+    public void addItems(View view) {
+        String reply = "Cheese";
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, reply);
         setResult(RESULT_OK, replyIntent);
         Log.d(LOG_TAG, "End SecondActivity");
         finish();
     }
-    @Override
-    public void onStart(){
-        super.onStart();
-        Log.d(LOG_TAG, "onStart");
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "onPause");
+
+    public void add2(View view) {
+        String reply = "Rice";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "onRestart");
+    public void add3(View view) {
+        String reply = "Apples";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "onResume");
+    public void add4(View view) {
+        String reply = "Banana";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "onStop");
+    public void add5(View view) {
+        String reply = "Oranges";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
+    public void add6(View view) {
+        String reply = "Shampoo";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
+    }
+
+    public void add7(View view) {
+        String reply = "Dog Food";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
+    }
+
+    public void add8(View view) {
+        String reply = "Washing Powder";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
+    }
+
+    public void add9(View view) {
+        String reply = "Potato";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
+    }
+
+    public void add10(View view) {
+        String reply = "Shop";
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
+        finish();
     }
 }

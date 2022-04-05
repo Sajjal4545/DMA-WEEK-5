@@ -1,1 +1,1 @@
-<img src="gif/TwoActivitiesLife.gif" width="400" />
+<img src="gif/Shopping-List.gif" width="400" />

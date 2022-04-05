@@ -4,55 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#009688"
+    android:background="#FF9800"
     tools:context=".SecondActivity">
 
-    <TextView
-        android:id="@+id/text_header"
+    <Button
+        android:id="@+id/BtnOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:text="@string/text_header"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="addItems"
+        android:text="@string/cheese"
+        app:layout_constraintEnd_toEndOf="@+id/BtnTwo"
+        app:layout_constraintStart_toStartOf="@+id/BtnTwo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_message"
+    <Button
+        android:id="@+id/BtnTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_header" />
+        android:onClick="add2"
+        android:text="@string/rice"
+        app:layout_constraintEnd_toEndOf="@+id/BtnThree"
+        app:layout_constraintStart_toStartOf="@+id/BtnThree"
+        app:layout_constraintTop_toBottomOf="@+id/BtnOne" />
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/BtnThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="returnReply"
-        android:text="@string/button_second"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="8dp"
+        android:onClick="add3"
+        android:text="@string/apples"
+        app:layout_constraintEnd_toEndOf="@+id/BtnFour"
+        app:layout_constraintStart_toStartOf="@+id/BtnFour"
+        app:layout_constraintTop_toBottomOf="@+id/BtnTwo" />
 
-    <EditText
-        android:id="@+id/editText_second"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/BtnFour"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="@string/editText_second"
-        android:inputType="textLongMessage"
+        android:layout_marginTop="8dp"
+        android:onClick="add4"
+        android:text="@string/banana"
+        app:layout_constraintEnd_toEndOf="@+id/BtnFive"
+        app:layout_constraintStart_toStartOf="@+id/BtnFive"
+        app:layout_constraintTop_toBottomOf="@+id/BtnThree" />
+
+    <Button
+        android:id="@+id/BtnFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add5"
+        android:text="@string/oranges"
+        app:layout_constraintEnd_toEndOf="@+id/BtnSix"
+        app:layout_constraintStart_toStartOf="@+id/BtnSix"
+        app:layout_constraintTop_toBottomOf="@+id/BtnFour" />
+
+    <Button
+        android:id="@+id/BtnSix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add6"
+        android:text="@string/shampoo"
+        app:layout_constraintEnd_toEndOf="@+id/BtnSeven"
+        app:layout_constraintStart_toStartOf="@+id/BtnSeven"
+        app:layout_constraintTop_toBottomOf="@+id/BtnFive" />
+
+    <Button
+        android:id="@+id/BtnSeven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add7"
+        android:text="@string/dog_food"
+        app:layout_constraintEnd_toEndOf="@+id/BtnEight"
+        app:layout_constraintStart_toStartOf="@+id/BtnEight"
+        app:layout_constraintTop_toBottomOf="@+id/BtnSix" />
+
+    <Button
+        android:id="@+id/BtnEight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add8"
+        android:text="@string/washing_powder"
+        app:layout_constraintEnd_toEndOf="@+id/BtnNine"
+        app:layout_constraintStart_toStartOf="@+id/BtnNine"
+        app:layout_constraintTop_toBottomOf="@+id/BtnSeven" />
+
+    <Button
+        android:id="@+id/BtnNine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add9"
+        android:text="@string/Potato"
+        app:layout_constraintEnd_toEndOf="@+id/BtnTen"
+        app:layout_constraintStart_toStartOf="@+id/BtnTen"
+        app:layout_constraintTop_toBottomOf="@+id/BtnEight" />
+
+    <Button
+        android:id="@+id/BtnTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="add10"
+        android:text="@string/shop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_second"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnNine"
+        app:layout_constraintVertical_bias="0.092" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
